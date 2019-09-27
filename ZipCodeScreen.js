@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
     StyleSheet, FlatList, View, Text,
-    TouchableHighlight
+    TouchableHighlight,ImageBackground
 } from 'react-native';
 const availableZipItems = [
     { place: 'Hatyai', code: '90110' },
@@ -32,6 +32,7 @@ export default class WeatherScreen extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         return (
+            <ImageBackground source={require('../a2.jpg')} style={styles.backdrop}>
             <View>
                 <FlatList
                     data={availableZipItems}
@@ -39,6 +40,7 @@ export default class WeatherScreen extends React.Component {
                     renderItem={({ item }) => <ZipItem {...item} navigate={navigate} />}
                 />
             </View>
+            </ImageBackground>
         );
     }
 
@@ -47,15 +49,23 @@ export default class WeatherScreen extends React.Component {
 const styles = StyleSheet.create({
     zipItem :{
         flexDirection:'row',
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-evenly',
+        backgroundColor:'#2F4F4F',
+        
+        
     },
     zipCode :{
         alignItems:'center',
-        fontSize: 15
+        fontSize: 20,
+        color:'white',
     },
     zipPlace : {
         alignItems:'center',
-        fontSize: 15
+        fontSize: 20,
+        color:'white',
+    },
+    backdrop: {
+        width: '100%', height: '100%',
     },
 
 })

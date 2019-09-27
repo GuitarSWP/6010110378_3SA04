@@ -51,15 +51,16 @@ const styles = StyleSheet.create({
     padding: {
         fontSize: 27, color: '#FFFFF0', textAlign: "center",
         backgroundColor: '#2F4F4F',
+        //paddingTop: 20,
     },
 
-    container: { paddingTop: 25 },
+    container: { },
     backdrop: {
         width: '100%', height: '100%',
         flexDirection: 'column',
 
-        //justifyContent:'center',
-        alignItems: 'center',
+        
+        // alignItems: 'center',
     },
 
 });
